@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # =============================================================
 # [fixed config]
 # =============================================================
@@ -21,29 +20,39 @@ NS_TELLO_601="tello_601"
 NS_TELLO_C="tello_C"
 NS_TELLO_E="tello_E"
 
-# =============================================================
-# [cheange config]
-# =============================================================
 # control which node
 IS_NODE_1="true"
-IS_NODE_2="true"
-IS_NODE_3="true"
+IS_NODE_2="false"
+IS_NODE_3="false"
+
+# =============================================================
+# [change config]
+# =============================================================
+# fly time
+FLY_TIME=5
+
+# coin numbers
+COIN_COUNT=12
 
 # control which tello
-TELLO_1_AP=$AP_TELLO_601
-TELLO_1_NS=$NS_TELLO_601
+TELLO_1_AP=$AP_TELLO_C
+TELLO_1_NS=$NS_TELLO_C
 TELLO_2_AP=$AP_TELLO_E
 TELLO_2_NS=$NS_TELLO_E
 TELLO_3_AP=$AP_TELLO_C
 TELLO_3_NS=$NS_TELLO_C
 
+# folder name
+DIR_NS="capacity_test"
+FILE_NAME="tello${TELLO_1_NS:6}_coin_${COIN_COUNT}"
+
 # =============================================================
 # [flow]
 # =============================================================
-# connect to drones
+# 1. connect to drones
 source /home/kuei/Documents/shell/connect_to_drones.sh
 
-# enter control mode
+# 2. enter control mode
 echo "==========================================" 
 echo "==============launch started=============="
 echo "=========================================="
@@ -58,64 +67,83 @@ roslaunch tello_driver tello_node.launch \
     isNode2:=$IS_NODE_2 \
     isNode3:=$IS_NODE_3 &
 
-sleep 10
+sleep 5
 
-# rosbag
+# 3. rosbag
 echo "=========================================="
 echo "===============launch ended==============="
 echo "=========================================="
+mkdir -p "/home/kuei/Documents/records/${DIR_NS}"
+rosbag record -a -o "/home/kuei/Documents/records/${DIR_NS}/${FILE_NAME}.bag" &
+sleep 3
 
-source /home/kuei/Documents/shell/rosbag_record.sh
-sleep 5
-
-
-# takeoff
+# 4. motor on
 echo "=========================================="
-echo "===============takeoff command==============="
+echo "===============motor on command==============="
 echo "=========================================="
 if [ $IS_NODE_1 == "true" ]
 then
-    rosrun load_transport talker.py $TELLO_1_NS/takeoff &
+    rosrun load_transport talker.py $TELLO_1_NS/manual_takeoff
 fi
 if [ $IS_NODE_2 == "true" ]
 then
-    rosrun load_transport talker.py $TELLO_2_NS/takeoff &
+    rosrun load_transport talker.py $TELLO_2_NS/manual_takeoff
 fi
 if [ $IS_NODE_3 == "true" ]
 then
-    rosrun load_transport talker.py $TELLO_3_NS/takeoff &
+    rosrun load_transport talker.py $TELLO_3_NS/manual_takeoff
 fi
 
-echo "=========================================="
-echo "===============takeoff sleep==============="
-echo "=========================================="
-sleep 10
+sleep 3
 
-# land
+
+# 4. fly upward
+echo "=========================================="
+echo "===============fly upward==============="
+echo "=========================================="
+if [ $IS_NODE_1 == "true" ]
+then
+    rosrun load_transport vel_cmd.py "/${TELLO_1_NS}/cmd_vel" ${FLY_TIME}
+fi
+if [ $IS_NODE_2 == "true" ]
+then
+    rosrun load_transport vel_cmd.py $TELLO_2_NS/cmd_vel ${FLY_TIME}
+fi
+if [ $IS_NODE_3 == "true" ]
+then
+    rosrun load_transport vel_cmd.py $TELLO_3_NS/cmd_vel ${FLY_TIME}
+fi
+
+
+# 5. land
 echo "=========================================="
 echo "===============land command==============="
 echo "=========================================="
 if [ $IS_NODE_1 == "true" ]
 then
-    rosrun load_transport talker.py $TELLO_1_NS/land &
+    rosrun load_transport talker.py $TELLO_1_NS/land
 fi
 if [ $IS_NODE_2 == "true" ]
 then
-    rosrun load_transport talker.py $TELLO_2_NS/land &
+    rosrun load_transport talker.py $TELLO_2_NS/land
 fi
 if [ $IS_NODE_3 == "true" ]
 then
-    rosrun load_transport talker.py $TELLO_3_NS/land &
+    rosrun load_transport talker.py $TELLO_3_NS/land
 fi
 
 
 echo "=========================================="
 echo "===============land sleep==============="
 echo "=========================================="
-sleep 10
+sleep 5
 
+# 6. clean
 echo "=========================================="
 echo "===============clean all==============="
 echo "=========================================="
 rosnode kill -a
 killall -9 rosmaster
+
+# 7. process rosbag
+# python3 /home/kuei/Documents/records/bag2csv.py ${DIR_NS} ${FILE_NAME} ${TELLO_1_NS}

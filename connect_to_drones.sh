@@ -1,7 +1,11 @@
 #!/bin/bash
+nmcli radio wifi off
+sleep 5
+nmcli radio wifi on
 
-nmcli dev wifi rescan ifname $IF_built_in
-sleep 15
+
+# nmcli dev wifi rescan ifname $IF_built_in
+sleep 10
 
 if [ $IS_NODE_1 == "true" ]
 then 

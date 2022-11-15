@@ -33,13 +33,14 @@ TELLO_3_NS=$NS_TELLO_E
 # =============================================================
 # control which node
 IS_NODE_1="true"
-IS_NODE_2="true"
-IS_NODE_3="true"
+IS_NODE_2="false"
+IS_NODE_3="false"
 
 # folder name
-DIR_NS="cooperative_transport"
-FILE_NAME="upper_hover_7_sec_9th"
-FLY_TIME=5
+DIR_NS="imu_meaning"
+FILE_NAME="-y"
+MODE_SIGN="-"
+MODE_DIRECT="y"
 
 # =============================================================
 # [flow]
@@ -64,15 +65,7 @@ roslaunch tello_driver tello_node.launch \
 
 sleep 5
 
-# 3. rosbag
-echo "=========================================="
-echo "===============launch ended==============="
-echo "=========================================="
-mkdir -p "/home/kuei/Documents/records/${DIR_NS}"
-rosbag record -a -o "/home/kuei/Documents/records/${DIR_NS}/${FILE_NAME}.bag" &
-sleep 3
-
-# 4. motor on
+# 3. motor on
 echo "=========================================="
 echo "===============motor on command==============="
 echo "=========================================="
@@ -91,25 +84,16 @@ fi
 
 sleep 3
 
-
-# 4. fly upward
+# 4. rosbag
 echo "=========================================="
-echo "===============fly upward==============="
+echo "===============launch ended==============="
 echo "=========================================="
-if [ $IS_NODE_1 == "true" ]
-then
-    rosrun load_transport vel_cmd.py "/${TELLO_1_NS}/cmd_vel" ${FLY_TIME} &
-fi
-if [ $IS_NODE_2 == "true" ]
-then
-    rosrun load_transport vel_cmd.py $TELLO_2_NS/cmd_vel ${FLY_TIME} &
-fi
-if [ $IS_NODE_3 == "true" ]
-then
-    rosrun load_transport vel_cmd.py $TELLO_3_NS/cmd_vel ${FLY_TIME} 
-fi
+mkdir -p "/home/kuei/Documents/records/${DIR_NS}"
+rosbag record -a -o "/home/kuei/Documents/records/${DIR_NS}/${FILE_NAME}.bag" &
 
-sleep 7
+
+# 4. fly 
+rosrun load_transport imu_meaning_vel_cmd.py $MODE_SIGN $MODE_DIRECT
 
 
 # 5. land
@@ -118,22 +102,21 @@ echo "===============land command==============="
 echo "=========================================="
 if [ $IS_NODE_1 == "true" ]
 then
-    rosrun load_transport talker.py $TELLO_1_NS/land &
+    rosrun load_transport talker.py $TELLO_1_NS/land 
 fi
 if [ $IS_NODE_2 == "true" ]
 then
-    rosrun load_transport talker.py $TELLO_2_NS/land &
+    rosrun load_transport talker.py $TELLO_2_NS/land
 fi
 if [ $IS_NODE_3 == "true" ]
 then
     rosrun load_transport talker.py $TELLO_3_NS/land 
 fi
 
-
 echo "=========================================="
 echo "===============land sleep==============="
 echo "=========================================="
-sleep 5
+sleep 3
 
 # 6. clean
 echo "=========================================="

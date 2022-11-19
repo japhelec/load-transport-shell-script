@@ -38,7 +38,7 @@ IS_NODE_3="true"
 
 # folder name
 DIR_NS="cooperative_transport"
-FILE_NAME="upper_hover_7_sec_9th"
+FILE_NAME="upper_hover_7_sec_3rd"
 FLY_TIME=5
 
 # =============================================================

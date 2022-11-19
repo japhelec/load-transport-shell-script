@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir="imu_meaning"
+dir="cooperative_transport"
 
 
 search_dir="/home/kuei/Documents/records/${dir}"

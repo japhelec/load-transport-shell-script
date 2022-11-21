@@ -22,4 +22,9 @@ then
     nmcli dev wifi connect $TELLO_3_AP ifname $IF_3 &
 fi
 
+if [ $IS_NODE_4 == "true" ]
+then 
+    nmcli dev wifi connect $TELLO_4_AP ifname $IF_4 &
+fi
+
 sleep 15

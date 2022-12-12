@@ -2,14 +2,16 @@
 # =============================================================
 # [change config]
 # =============================================================
+AP_ID="3"
+IS_DRIVER="true"
 IS_CAMERA_VIZ="true"
-IS_RECORD="false"
-IS_ACTION="false"
+IS_RECORD="true"
+IS_ACTION="true"
 IS_PERCEPTION="true"
-DIR_NS="/home/kuei/Documents/records/visual_inertial_odometry"
-BAG_NAME="downward_camera_flight"
+DIR_NS="/home/kuei/Documents/records/single_lift_middle"
+BAG_NAME="Desire-30deg_Kp-2-2-3_aluminum-fixing_apid-3_long-rope_2nd"
 
-if [$IS_RECORD = "true"]
+if [ $IS_RECORD == "true" ]
 then
     mkdir -p $DIR_NS
 fi
@@ -17,7 +19,9 @@ fi
 roslaunch tello_driver single_drone.launch \
     dir_ns:=$DIR_NS \
     bag_name:=$BAG_NAME \
+    is_driver:=$IS_DRIVER \
     is_record:=$IS_RECORD \
     is_camera_viz:=$IS_CAMERA_VIZ \
     is_action:=$IS_ACTION \
-    is_perception:=$IS_PERCEPTION
+    is_perception:=$IS_PERCEPTION \
+    ap_id:=$AP_ID

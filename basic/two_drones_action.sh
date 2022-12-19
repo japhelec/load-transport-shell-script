@@ -3,10 +3,10 @@
 # [change config]
 # =============================================================
 IS_RECORD="true"
-IS_ACTION="false"
-IS_PERCEPTION="false"
-DIR_NS="/home/kuei/Documents/records/two_lift_corner"
-BAG_NAME="test_video_input_MD5_Cthen601"
+IS_ACTION="true"
+IS_PERCEPTION="true"
+DIR_NS="/home/kuei/Documents/records/20221217"
+BAG_NAME="flyup-control_apid-2-4_Kp-2-2-05th04_fixing_2nd"
 
 TELLO_1_NS="tello_601"
 TELLO_2_NS="tello_C"

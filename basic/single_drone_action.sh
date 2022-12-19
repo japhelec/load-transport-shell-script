@@ -2,12 +2,12 @@
 # =============================================================
 # [change config]
 # =============================================================
-AP_ID="3"
-IS_RECORD="false"
+AP_ID="4"
+IS_RECORD="true"
 IS_ACTION="true"
 IS_PERCEPTION="true"
-DIR_NS="/home/kuei/Documents/records/single_lift_middle"
-BAG_NAME="flyup_control_apid-3_Kp-4-4-1_1st"
+DIR_NS="/home/kuei/Documents/records/20221219"
+BAG_NAME="Test16_Kp-25-25_Ki-001-001_Kd-0002-0002_woRope"
 
 if [ $IS_RECORD == "true" ]
 then

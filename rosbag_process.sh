@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir="cooperative_transport"
+dir="20221219"
 
 
 search_dir="/home/kuei/Documents/records/${dir}"
@@ -12,4 +12,4 @@ do
     python3 /home/kuei/Documents/records/${dir}/bag2csv.py $dir $bagname
 done
 
-zip -r $search_dir/$dir.zip $search_dir 
+# zip -r $search_dir/$dir.zip $search_dir 

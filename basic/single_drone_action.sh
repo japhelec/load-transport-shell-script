@@ -1,14 +1,20 @@
 #!/bin/bash
-# =============================================================
+
 # [change config]
-# =============================================================
-AP_ID="4"
+TELLO_NS="tello_601"
+AP_ID="2"
+
 IS_RECORD="true"
 IS_ACTION="true"
 IS_PERCEPTION="true"
-DIR_NS="/home/kuei/Documents/records/20221219"
-BAG_NAME="Test16_Kp-25-25_Ki-001-001_Kd-0002-0002_woRope"
 
+DIR_NS="/home/kuei/Documents/records/20221220"
+BAG_NAME="Test1_tello601_repeat"
+
+
+
+
+# [process]
 if [ $IS_RECORD == "true" ]
 then
     mkdir -p $DIR_NS
@@ -20,4 +26,5 @@ roslaunch tello_driver single_drone_action.launch \
     is_record:=$IS_RECORD \
     is_action:=$IS_ACTION \
     is_perception:=$IS_PERCEPTION \
-    ap_id:=$AP_ID
+    ap_id:=$AP_ID \
+    tello_ns:=$TELLO_NS

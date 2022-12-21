@@ -9,7 +9,7 @@ IS_ACTION="true"
 IS_PERCEPTION="true"
 
 DIR_NS="/home/kuei/Documents/records/20221220"
-BAG_NAME="Test1_tello601_repeat"
+BAG_NAME="Test2_tello601_apid-2"
 
 
 

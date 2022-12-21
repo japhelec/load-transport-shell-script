@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir="20221219"
+dir="20221221"
 
 
 search_dir="/home/kuei/Documents/records/${dir}"

@@ -1,18 +1,22 @@
 #!/bin/bash
-# =============================================================
 # [change config]
-# =============================================================
 IS_RECORD="true"
 IS_ACTION="true"
 IS_PERCEPTION="true"
-DIR_NS="/home/kuei/Documents/records/20221217"
-BAG_NAME="flyup-control_apid-2-4_Kp-2-2-05th04_fixing_2nd"
+
+
+DIR_NS="/home/kuei/Documents/records/20221221"
+BAG_NAME="Test3_apid-2-4"
 
 TELLO_1_NS="tello_601"
 TELLO_2_NS="tello_C"
 TELLO1_AP_ID="2"
 TELLO2_AP_ID="4"
 
+
+
+
+# [process]
 if [ $IS_RECORD == "true" ]
 then
     mkdir -p $DIR_NS

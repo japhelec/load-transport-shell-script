@@ -5,11 +5,11 @@ IS_ACTION="true"
 IS_PERCEPTION="true"
 
 
-DIR_NS="/home/kuei/Documents/records/20221221"
-BAG_NAME="Test3_apid-2-4"
+DIR_NS="/home/kuei/Documents/records/20221231/two_drones_30cm"
+BAG_NAME="Test2_uz-03_10sec"
 
-TELLO_1_NS="tello_601"
-TELLO_2_NS="tello_C"
+TELLO_1_NS="tello_A"
+TELLO_2_NS="tello_D"
 TELLO1_AP_ID="2"
 TELLO2_AP_ID="4"
 

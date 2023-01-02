@@ -1,15 +1,17 @@
 #!/bin/bash
 
 # [change config]
-TELLO_NS="tello_601"
+TELLO_NS="tello_A"
+# TELLO_NS="tello_D"
 AP_ID="2"
 
-IS_RECORD="true"
-IS_ACTION="true"
+IS_RECORD="false"
+IS_ACTION="false"
 IS_PERCEPTION="true"
 
-DIR_NS="/home/kuei/Documents/records/20221220"
-BAG_NAME="Test2_tello601_apid-2"
+DIR_NS="/home/kuei/Documents/records/20221230/Tello_A"
+# DIR_NS="/home/kuei/Documents/records/20221230/Tello_D"
+BAG_NAME="Test5_uz-03_10sec"
 
 
 

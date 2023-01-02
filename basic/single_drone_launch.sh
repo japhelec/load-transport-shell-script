@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # [change config]
-TELLO_NS="tello_601"
+TELLO_NS="tello_A"
+# TELLO_NS="tello_D"
 
 IS_DRIVER="true"
 IS_CAMERA_VIZ="true"

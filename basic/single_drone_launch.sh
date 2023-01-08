@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # [change config]
-TELLO_NS="tello_A"
-# TELLO_NS="tello_D"
+# TELLO_NS="tello_A"
+TELLO_NS="tello_D"
 
 IS_DRIVER="true"
 IS_CAMERA_VIZ="true"
 IMG_TYPE="image_raw"
-IFNAME="wlp0s20f3"
+IFNAME="wlx1cbfce8dc7fe"
 
 
 # [process]

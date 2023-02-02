@@ -2,8 +2,8 @@
 # =============================================================
 # [change config]
 # =============================================================
-TELLO_1_NS="tello_A"
-TELLO_2_NS="tello_D"
+TELLO_1_NS="tello_601"
+TELLO_2_NS="tello_C"
 
 IFNAME1="wlp0s20f3"
 IFNAME2="wlx1cbfce8dc7fe"

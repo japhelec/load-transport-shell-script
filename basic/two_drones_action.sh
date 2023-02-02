@@ -5,13 +5,13 @@ IS_ACTION="true"
 IS_PERCEPTION="true"
 
 
-DIR_NS="/home/kuei/Documents/records/20230103/two_drones_70cm"
-BAG_NAME="Test5_uz-03_10sec"
+DIR_NS="/home/kuei/Documents/records/20230201/two_fly_up/"
+BAG_NAME="Test4"
 
-TELLO_1_NS="tello_A"
-TELLO_2_NS="tello_D"
+TELLO_1_NS="tello_601"
+TELLO_2_NS="tello_C"
 TELLO1_AP_ID="2"
-TELLO2_AP_ID="4"
+TELLO2_AP_ID="0"
 
 
 

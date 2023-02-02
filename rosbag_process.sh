@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir="20230103/Tello_D"
+dir="20230201/two_fly_up"
 
 
 search_dir="/home/kuei/Documents/records/${dir}"

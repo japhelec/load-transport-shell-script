@@ -1,17 +1,17 @@
 #!/bin/bash
 
 # [change config]
-TELLO_NS="tello_C"
+TELLO_NS="tello_601"
 # TELLO_NS="tello_D"
 AP_ID="0"
 
-IS_RECORD="true"
+IS_RECORD="false"
 IS_ACTION="true"
 IS_PERCEPTION="true"
 
-DIR_NS="/home/kuei/Documents/records/20230201/single_fly_up/Tello_C"
+DIR_NS="/home/kuei/Documents/records/20230206/payload_marker_calib"
 # DIR_NS="/home/kuei/Documents/records/20230103/Tello_D"
-BAG_NAME="Test3_Kp-12_Ki-001_Kd-0001"
+BAG_NAME="Test2"
 
 
 

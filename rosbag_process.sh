@@ -1,9 +1,9 @@
 #!/bin/bash
 
-dir="20230201/two_fly_up"
+dir="20230208/payload_centric/single"
+me=`pwd "$0"`
 
-
-search_dir="/home/kuei/Documents/records/${dir}"
+search_dir="$me/../records/${dir}"
 for entry in "$search_dir"/*.bag
 do
     echo $entry

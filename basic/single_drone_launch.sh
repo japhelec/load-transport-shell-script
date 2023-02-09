@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # [change config]
-TELLO_NS="tello_601"
-# TELLO_NS="tello_D"
+# TELLO_NS="tello_A"
+TELLO_NS="tello_D"
 
 IS_DRIVER="true"
 IS_CAMERA_VIZ="true"
 IMG_TYPE="image_raw"
 IS_PERCEPTION="true"
-IFNAME="wlp0s20f3"
-# IFNAME="wlx1cbfce8dc7fe"
+# IFNAME="wlp0s20f3"
+IFNAME="wlxc4e90a08629a"
 
 # [process]
 roslaunch tello_driver single_drone_launch.launch \

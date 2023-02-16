@@ -3,8 +3,8 @@
 IS_RECORD="true"
 
 me=`pwd "$0"`
-DIR_NS="$me/../records/20230209/payload_centric/single/tello_D"
-BAG_NAME="Test2_3_wp"
+DIR_NS="$me/../records/20230216/single_D/filtered"
+BAG_NAME="Test2"
 
 TELLO_NS="tello_D"
 TELLO_AP_ID="6"

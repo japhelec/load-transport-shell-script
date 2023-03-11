@@ -3,11 +3,11 @@
 IS_RECORD="true"
 
 me=`pwd "$0"`
-DIR_NS="$me/../records/20230216/single_D/filtered"
-BAG_NAME="Test2"
+DIR_NS="$me/../records/20230303/single_A"
+BAG_NAME="Test6"
 
-TELLO_NS="tello_D"
-TELLO_AP_ID="6"
+TELLO_NS="tello_A"
+TELLO_AP_ID="0"
 
 # [process]
 if [ $IS_RECORD == "true" ]

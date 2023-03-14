@@ -1,10 +1,10 @@
 #!/bin/bash
 
-IS_RECORD="true"
+IS_RECORD="false"
 
 me=`pwd "$0"`
-DIR_NS="$me/../records/202303/0311/refactor_test"
-BAG_NAME="Test2"
+DIR_NS="$me/../records/202303/0312/refactor_test"
+BAG_NAME="Test5_black_cable_75cm_rotate_aside"
 
 TELLO_NS="tello_A"
 

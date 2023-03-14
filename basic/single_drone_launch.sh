@@ -2,9 +2,11 @@
 
 # [change config]
 TELLO_NS="tello_A"
+# TELLO_NS="tello_C"
 # TELLO_NS="tello_D"
 
 IFNAME="wlp0s20f3"
+# IFNAME="wlx5c925ed5619a"
 # IFNAME="wlxc4e90a08629a"
 
 IS_DRIVER="true"

@@ -17,7 +17,7 @@ then
     mkdir -p $DIR_NS
 fi
 
-roslaunch tello_driver two_drone_control.launch \
+roslaunch load_transport two_drone_control.launch \
     dir_ns:=$DIR_NS \
     bag_name:=$BAG_NAME \
     is_record:=$IS_RECORD \

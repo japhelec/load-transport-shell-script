@@ -4,16 +4,16 @@
 # =============================================================
 TELLO1_NS="tello_A"
 TELLO2_NS="tello_C"
-TELLO3_NS="tello_D"
+TELLO3_NS="tello_601"
 
 IFNAME1="wlp0s20f3"
 IFNAME2="wlx5c925ed5619a"
 IFNAME3="wlxc4e90a08629a"
 
-IS_DRIVER="true"
+IS_DRIVER="false"
 IS_CAMERA_VIZ="true"
-IMG_TYPE="image_raw"
-IS_PERCEPTION="true"
+IMG_TYPE="0"
+IS_PERCEPTION="false"
 
 
 

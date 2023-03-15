@@ -1,14 +1,14 @@
 #!/bin/bash
 
-IS_RECORD="true"
+IS_RECORD="false"
 
 me=`pwd "$0"`
-DIR_NS="$me/../records/202303/0314/three_drones/"
-BAG_NAME="Test1"
+DIR_NS="$me/../records/202303/0315/three_drones/"
+BAG_NAME="Test6_board"
 
 TELLO1_NS="tello_A"
 TELLO2_NS="tello_C"
-TELLO3_NS="tello_D"
+TELLO3_NS="tello_601"
 
 # [process]
 if [ $IS_RECORD == "true" ]

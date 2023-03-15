@@ -20,6 +20,8 @@ FLYUP_KDX=0.001
 FLYUP_KDY=0.001
 FLYUP_KDZ=0.001
 FLYUP_TOL=0.05
+LIFT_THRUST=1.5
+LIFT_DURATION=3
 
 # [process]
 if [ $IS_RECORD == "true" ]
@@ -43,4 +45,6 @@ roslaunch load_transport three_drone_control.launch \
     flyup_kix:=$FLYUP_KIX \
     flyup_kiy:=$FLYUP_KIY \
     flyup_kiz:=$FLYUP_KIZ \
-    flyup_tol:=$FLYUP_TOL
+    flyup_tol:=$FLYUP_TOL \
+    lift_thrust:=$LIFT_THRUST \
+    lift_duration:=$LIFT_DURATION

@@ -1,27 +1,35 @@
 #!/bin/bash
 
-IS_RECORD="false"
+IS_RECORD="true"
 
 me=`pwd "$0"`
-DIR_NS="$me/../records/202303/0315/three_drones/"
-BAG_NAME="Test6_board"
+DIR_NS="$me/../records/202305/0517/distance_leader/K0808"
+# DIR_NS="$me/../records/202305/0515/no_payload/K0808"
+BAG_NAME="Test1"
 
 TELLO1_NS="tello_A"
 TELLO2_NS="tello_C"
-TELLO3_NS="tello_601"
+TELLO3_NS="tello_D"
 
-FLYUP_KPX=1.2
-FLYUP_KPY=1.2
-FLYUP_KPZ=1.2
-FLYUP_KIX=0.03
-FLYUP_KIY=0.03
-FLYUP_KIZ=0.03
-FLYUP_KDX=0.001
-FLYUP_KDY=0.001
-FLYUP_KDZ=0.001
-FLYUP_TOL=0.05
-LIFT_THRUST=1.5
-LIFT_DURATION=3
+LIFT_THRUST_01=0.8
+LIFT_THRUST_02=0.8
+LIFT_THRUST_03=0.8
+# LIFT_DURATION=3
+# ========================================================
+LIFT_DURATION=4.5
+
+PITCH_KP=2.5
+PITCH_KI=0
+PITCH_KD=0.05
+
+YAW_KP=2.5
+YAW_KI=0
+YAW_KD=0
+YAW_TOL=5
+
+FORM_K=0.8
+DIST_K=0.8
+DESIRED_DIST=0.7
 
 # [process]
 if [ $IS_RECORD == "true" ]
@@ -36,15 +44,17 @@ roslaunch load_transport three_drone_control.launch \
     tello1_ns:=$TELLO1_NS \
     tello2_ns:=$TELLO2_NS \
     tello3_ns:=$TELLO3_NS \
-    flyup_kpx:=$FLYUP_KPX \
-    flyup_kpy:=$FLYUP_KPY \
-    flyup_kpz:=$FLYUP_KPZ \
-    flyup_kdx:=$FLYUP_KDX \
-    flyup_kdy:=$FLYUP_KDY \
-    flyup_kdz:=$FLYUP_KDZ \
-    flyup_kix:=$FLYUP_KIX \
-    flyup_kiy:=$FLYUP_KIY \
-    flyup_kiz:=$FLYUP_KIZ \
-    flyup_tol:=$FLYUP_TOL \
-    lift_thrust:=$LIFT_THRUST \
-    lift_duration:=$LIFT_DURATION
+    lift_thrust_01:=$LIFT_THRUST_01 \
+    lift_thrust_02:=$LIFT_THRUST_02 \
+    lift_thrust_03:=$LIFT_THRUST_03 \
+    lift_duration:=$LIFT_DURATION \
+    pitch_kp:=$PITCH_KP \
+    pitch_ki:=$PITCH_KI \
+    pitch_kd:=$PITCH_KD \
+    yaw_kp:=$YAW_KP \
+    yaw_ki:=$YAW_KI \
+    yaw_kd:=$YAW_KD \
+    yaw_tol:=$YAW_TOL \
+    form_k:=$FORM_K \
+    dist_k:=$DIST_K \
+    desired_dist:=$DESIRED_DIST
